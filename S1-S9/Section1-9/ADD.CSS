@@ -1,0 +1,48 @@
+h1 {
+    text-align: center;
+    letter-spacing: 15px;
+    font-family: copper;
+    font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+    color: #dda15e;
+} 
+h2 {
+    color: #fefae0;
+    text-decoration: #fefae0 underline dashed;
+}
+button {
+    color: red;
+}
+body { 
+    background-color: #000000;
+    color: #dda15e;
+}
+#will {
+    background-color: #dda15e;
+    color: cyan;
+}
+#willnot {
+    background-color: #ffffff;
+    color: #fb8500;
+}
+.ClassTest {
+    color: #fb8500;
+}
+span a {
+    color: #dda15e;
+}
+input + button {
+    color: blue;
+}
+input[type="password"] {
+    color: greenyellow;
+}
+a:hover{
+    color: #fb8500;
+}
+button:hover {
+    color: #400000;
+}
+ 
+/*Specificity Start*/
+          
+/*Specificity End*/
