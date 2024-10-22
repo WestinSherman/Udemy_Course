@@ -13,10 +13,10 @@
 // console.log("CONGRATS YOU GOT THE SECRET!!!")
 
 // let input = prompt("Hey, say something!")
-// while(true) {
+// while (true) {
 //     input = prompt(input);
 //     if (input.toLocaleLowerCase() === "stop copying me") break;
-// }   
+// }
 
 // "hello"
 // "hello"
