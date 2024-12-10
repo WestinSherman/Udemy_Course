@@ -24,6 +24,12 @@ const fakeRequestPromise = (url) => {
 }
 
 
+
+
+
+
+
+
 // fakeRequestCallback('books.com/page1',
 //     function (response) {
 //         console.log("IT WORKED!!!!")
@@ -50,54 +56,68 @@ const fakeRequestPromise = (url) => {
 
 
 
+// fakeRequestCallback("books.com",
+//     function (response) {
+//         console.log("IT WORKED!!!")
+//         console.log(response)
+//     }, function (err) {
+//         console.log("ERROR!!!", err)
+//     })
 
-
-
-
-// fakeRequestPromise('yelp.com/api/coffee/page1')
+//If you want to chain this: 
+//remove the "const request" and the "request right under it."
+// const request = fakeRequestPromise("yelp.com/api/coffee");
+// request
 //     .then(() => {
-//         console.log("IT WORKED!!!!!! (page1)")
-//         fakeRequestPromise('yelp.com/api/coffee/page2')
+//         console.log("PROMISE RESOLVED")
+//         console.log("IT WORKED!!!")
+//     }).catch(() => {
+//         console.log("PROMISE REJECTED!")
+//         console.log("OH NO, ERROR!!!")
+//     })
+
+//Like so:
+// fakeRequestPromise("yelp.com/api/coffee/page1")
+//     .then(() => {
+//         console.log("IT WORKED!!!  (page1)")
+//         fakeRequestPromise("yelp.com/api/coffee/page2")
 //             .then(() => {
-//                 console.log("IT WORKED!!!!!! (page2)")
-//                 fakeRequestPromise('yelp.com/api/coffee/page3')
+//                 console.log("IT WORKED!!!  (page2)")
+//                 fakeRequestPromise("yelp.com/api/coffee/page3")
 //                     .then(() => {
-//                         console.log("IT WORKED!!!!!! (page3)")
+//                         console.log("IT WORKED!!!  (page3)")
 //                     })
 //                     .catch(() => {
-//                         console.log("OH NO, ERROR!!! (page3)")
+//                         console.log("OH NO, ERROR!!!  (page3)")
 //                     })
 //             })
 //             .catch(() => {
-//                 console.log("OH NO, ERROR!!! (page2)")
+//                 console.log("OH NO, ERROR!!!  (page2)")
 //             })
+
 //     })
 //     .catch(() => {
-//         console.log("OH NO, ERROR!!! (page1)")
+//         console.log("PROMISE REJECTED!")
+//         console.log("OH NO, ERROR!!!")
 //     })
 
 
-// THE CLEANEST OPTION WITH THEN/CATCH
-// RETURN A PROMISE FROM .THEN() CALLBACK SO WE CAN CHAIN!
-fakeRequestPromise('yelp.com/api/coffee/page1')
-    .then((data) => {
-        console.log("IT WORKED!!!!!! (page1)")
+fakeRequestPromise("yelp.com/api/coffee/page1")
+    .then(() => {
+        console.log("IT WORKED!!!  (page1)")
         console.log(data)
-        return fakeRequestPromise('yelp.com/api/coffee/page2')
+        return fakeRequestPromise("yelp.com/api/coffee/page2")
     })
-    .then((data) => {
-        console.log("IT WORKED!!!!!! (page2)")
+    .then(() => {
+        console.log("IT WORKED!!!  (page2)")
         console.log(data)
-        return fakeRequestPromise('yelp.com/api/coffee/page3')
+        return fakeRequestPromise("yelp.com/api/coffee/page3")
     })
-    .then((data) => {
-        console.log("IT WORKED!!!!!! (page3)")
+    .then(() => {
+        console.log("IT WORKED!!!  (page3)")
         console.log(data)
     })
     .catch((err) => {
         console.log("OH NO, A REQUEST FAILED!!!")
         console.log(err)
     })
-
-
-
